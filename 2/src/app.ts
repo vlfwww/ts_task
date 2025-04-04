@@ -101,27 +101,270 @@
 
 // 12. Создайте массив чисел и найдите сумму элементов, находящихся на нечетных
 // позициях (индексах) массива.
+
+// const arr:number[]=[1,2,3,4,5,6,7,8,9];
+// let sum:number=0;
+// for(let i = 0;i<arr.length;i++){
+//     if((i+1)%2!=0) sum+=arr[i];
+// }
+// console.log(sum);
+
 // 13. На входе динамичный массивчисел. Используя map выведите массив строк
 // четности и нечетности, в соответствии со значением числа:
 // [1, 2, 3, 4, 5, 6] -> [“нечет”, “чет”, “нечет”, “чет”, “нечет”, “чет”]
+
+// const arr:number[]=[];
+// for(let i=0;i<6;i++){
+//     arr.push(Math.round(Math.random()*10));
+// }
+// console.log(arr);
+// const rez:string[]=arr.map(el=>{
+//     if(el%2==0) return 'чет';
+//     else return'нечет';
+// })
+// console.log(rez);
+
 // 14. Напишите программу, которая находит и выводит наиболее часто встречающийся
 // символ в заданной строке.
+
+// const str ='arrtsawa';
+// let obj={};
+// for(let i = 0;i<str.length;i++){
+//     obj[str[i]]=0;
+// }
+// for(let i = 0;i<str.length;i++){
+//     for(let key in obj){
+//         if(str[i]===key) obj[key]++;
+//     }
+// }
+// const val:number[] = Object.values(obj);
+// console.log(val);
+
+// let max:number=val[1];
+// for(let el of val){
+//     if(el>max) max=el;
+// }
+// console.log(max);
+
+// for(let key in obj){
+//     if(max===obj[key]) console.log(`${key} - повторяется ${obj[key]} раз`);
+// }
+
 // 15. На входе динамичный массивстрок. Используя forEach создайте новый массив из
 // элементов, каждое значение которого имеет вид !name
 // [“hschool”, “company”] -> [“!hschool”, “!company”]
+
+// const arr:string[]=[]
+// for(let i = 0;i<5;i++){
+//     arr.push(prompt('Enter'));
+// }
+// const arr1:string[]=[];
+// const rez = arr.forEach(el=>{arr1.push('!'+el)});
+// console.log(arr1);
+
 // 16. Создайте массив чисел и определите, является ли он строго возрастающей
 // последовательностью.
+
+// const arr:number[]=[1,5,3,4,5,6,7,8];
+// let bul:boolean=true;
+// for(let i = 0;i<arr.length-1;i++){
+//     if(arr[i]<arr[i+1]) continue
+//     else bul=false;
+// }
+// if(bul) console.log('явл');
+// else console.log('неявл');
+
 // 17. Создайте массив чисел и найдите наибольшую разницу между двумя элементами.
+
+// const arr:number[]=[];
+// for(let i=0;i<6;i++){
+//     arr.push(Math.round(Math.random()*10));
+// }
+// console.log(arr);
+// let max:number=0;
+// for(let i = 0;i<arr.length;i++){
+//     for(let j = 0;j<arr.length;j++){
+//         if(Math.abs(arr[i]-arr[j])>max) max = Math.abs(arr[i]-arr[j]);
+//     }
+// }
+// console.log(max);
+
 // 18. Создайте массив объектов, представляющих книги, и найдите книгу где автор
 // Булгаков (author – одно из полей объекта)
+
+// const arr=[
+//     {   author:'Булгаков',
+//         book:'Мастер и маргарита',
+//         price:40,
+//     },
+//     {   author:'Пушкин',
+//         book:'kzkzkkz',
+//         price:80,
+//     },
+//     {   author:'Маяковский',
+//         book:'hhhvfffc',
+//         price:52,
+//     },
+//     {   author:'Колас',
+//         book:'hhhvfffc',
+//         price:48,
+//     },
+//     {   author:'Купала',
+//         book:'hhhvfffc',
+//         price:60,
+//     },
+// ];
+// for(let el of arr){
+//     if(el.author==='Булгаков') console.log(el.book);
+// }
+
 // 19. Создайте массив объектов, представляющих книги, и отобразите книгигде цена
 // каждой > 50 (price – одно из полей объекта)
+
+// const arr=[
+//     {   author:'Булгаков',
+//         book:'Мастер и маргарита',
+//         price:40,
+//     },
+//     {   author:'Пушкин',
+//         book:'kzkzkkz',
+//         price:80,
+//     },
+//     {   author:'Маяковский',
+//         book:'hhhvfffc',
+//         price:52,
+//     },
+//     {   author:'Колас',
+//         book:'hhhvfffc',
+//         price:48,
+//     },
+//     {   author:'Купала',
+//         book:'hhhvfffc',
+//         price:60,
+//     },
+// ];
+// for(let el of arr){
+//     if(el.price>50) console.log(el.book);
+// }
+
 // 20.Создайте массив объектов, представляющих книги, и найдите книгу с самым
 // большим количеством страниц (count – одно из полей объекта)
+
+// const arr=[
+//         {   author:'Булгаков',
+//             book:'Мастер и маргарита',
+//             price:40,
+//             count:50,
+//         },
+//         {   author:'Пушкин',
+//             book:'kzkzkkz',
+//             price:80,
+//             count:58,
+//         },
+//         {   author:'Маяковский',
+//             book:'hhhvfffc',
+//             price:52,
+//             count:90,
+//         },
+//         {   author:'Колас',
+//             book:'hhhvfffc',
+//             price:48,
+//             count:100,
+//         },
+//         {   author:'Купала',
+//             book:'hhhvfffc',
+//             price:60,
+//             count:20,
+//         },
+//     ];
+//     let max:number=0;
+//     for(let el of arr){
+//         if(el.count>max) max = el.count;
+//     }
+//     for(let el of arr){
+//         if(el.count===max) console.log(el.book);
+//     }
+
 // 21. Напишите программу, которая находит и выводит длину наиболее длинного
 // слова в заданной строке.
+
+// let maxCount:number=0;
+// let maxW:string='';
+// let str:string='dfg rtyui asdfghjkl;dfghjkl re rfbhkj';
+// const arr:string[]=str.split(' ');
+// for(let el of arr){
+//     if(el.length>maxCount){
+//         maxCount=el.length;
+//         maxW =el;
+//     }
+// }
+// console.log(maxW);
+
 // 22. Создайте массив объектов, представляющих сотрудников, с полями "имя" и
 // "зарплата". Найдите среднюю зарплату всех сотрудников.
+
+// const arr = [
+//   {
+//     name: "Masha",
+//     salary: 50,
+//   },
+//   {
+//     name: "Dasha",
+//     salary: 80,
+//   },
+//   {
+//     name: "Poly",
+//     salary: 30,
+//   },
+//   {
+//     name: "Pasha",
+//     salary: 90,
+//   },
+//   {
+//     name: "Ira",
+//     salary: 70,
+//   },
+// ];
+// let sum:number=0;
+// for (let el of arr) {
+//   sum+=el.salary;
+// }
+// const average = sum/arr.length;
+// console.log(average);
+
 // 23. Дан массив объектов с полями "название", "цена" и "количество". Найдите
 // суммарную стоимостью всех товаров учитывая количество каждого.
 // Итог = цена_1_товара * кол-во_1_товара + цена_2_товара * кол-во_2_товара + ...
+
+const arr =[
+    {
+        name:'Молоко',
+        price:10,
+        quantity:2,
+    },
+    {
+        name:'Сыр',
+        price:30,
+        quantity:3,
+    },
+    {
+        name:'Хлеб',
+        price:5,
+        quantity:4,
+    },
+    {
+        name:'Масло',
+        price:20,
+        quantity:2,
+    },
+    {
+        name:'Яйца',
+        price:40,
+        quantity:1,
+    },
+]
+let sum:number=0;
+for (let el of arr) {
+    sum+=(el.price*el.quantity);
+}
+console.log(sum);
