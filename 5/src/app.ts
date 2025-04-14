@@ -422,33 +422,212 @@
 // "You miss 100% of the shots you don't take. — Wayne Gretzky"
 // ];
 
-class QuoteGenerator {
-    private quotes: string[];
+// class QuoteGenerator {
+//     private quotes: string[];
 
-    constructor() {
-        this.quotes = [
-            "The only limit to our realization of tomorrow is our doubts of today. — Franklin D. Roosevelt",
-            "Life is 10% what happens to us and 90% how we react to it. — Charles R. Swindoll",
-            "Success is not final, failure is not fatal: It is the courage to continue that counts. — Winston Churchill",
-            "Believe you can and you're halfway there. — Theodore Roosevelt",
-            "Do not watch the clock. Do what it does. Keep going. — Sam Levenson",
-            "Keep your face always toward the sunshine—and shadows will fall behind you. — Walt Whitman",
-            "It does not matter how slowly you go as long as you do not stop. — Confucius",
-            "Your time is limited, don't waste it living someone else's life. — Steve Jobs",
-            "The best way to predict the future is to create it. — Peter Drucker",
-            "You miss 100% of the shots you don't take. — Wayne Gretzky"
-        ];
-    }
+//     constructor() {
+//         this.quotes = [
+//             "The only limit to our realization of tomorrow is our doubts of today. — Franklin D. Roosevelt",
+//             "Life is 10% what happens to us and 90% how we react to it. — Charles R. Swindoll",
+//             "Success is not final, failure is not fatal: It is the courage to continue that counts. — Winston Churchill",
+//             "Believe you can and you're halfway there. — Theodore Roosevelt",
+//             "Do not watch the clock. Do what it does. Keep going. — Sam Levenson",
+//             "Keep your face always toward the sunshine—and shadows will fall behind you. — Walt Whitman",
+//             "It does not matter how slowly you go as long as you do not stop. — Confucius",
+//             "Your time is limited, don't waste it living someone else's life. — Steve Jobs",
+//             "The best way to predict the future is to create it. — Peter Drucker",
+//             "You miss 100% of the shots you don't take. — Wayne Gretzky"
+//         ];
+//     }
 
-    public getRandomQuote(): string {
-        const randomIndex = Math.floor(Math.random() * this.quotes.length);
-        return this.quotes[randomIndex];
-    }
-    public addQuote(newQuote: string): void {
-        this.quotes.push(newQuote);
-    }
-}
-const quoteGenerator = new QuoteGenerator();
-console.log(quoteGenerator.getRandomQuote());
-quoteGenerator.addQuote("xcvbnmwlkjqbdcwqw");
-console.log(quoteGenerator.getRandomQuote());
+//     public getRandomQuote(): string {
+//         const randomIndex = Math.floor(Math.random() * this.quotes.length);
+//         return this.quotes[randomIndex];
+//     }
+//     public addQuote(newQuote: string): void {
+//         this.quotes.push(newQuote);
+//     }
+// }
+// const quoteGenerator = new QuoteGenerator();
+// console.log(quoteGenerator.getRandomQuote());
+// quoteGenerator.addQuote("xcvbnmwlkjqbdcwqw");
+// console.log(quoteGenerator.getRandomQuote());
+
+// 13. Создайтеинтерфейс INumberStats, который описываетследующиеметоды:
+//  • getEvenNumbers():number[] —возвращаетмассиввсехчётныхчисел.
+//  • getAverage(): number —возвращаетсреднеезначениевсехчисел.
+//  • getPositiveNumbersCount(): number — возвращает количество положительных чисел в
+//  массиве.
+//  Создайтекласс NumberStats, которыйреализует интерфейсINumberStats.
+//  Класс должен принимать массив чисел number[] в конструкторе и реализовывать все методы
+//  Требования:
+//  1.
+//  • Чётныечисла
+//  интерфейса. Также добавьте инкапсуляцию: скрывайте внутренний массив чисел, позволяя
+//  работать с нимтолькочерезметодыкласса.
+//  Приватноесвойстводля хранениямассивачисел.
+//  2. Публичныеметодыдляполученияинформации:
+//  • Среднеезначениечисел
+//  • Количествоположительныхчисел
+
+// interface INumberStats{
+//     getEvenNumbers():number[],
+//     getAverage(): number,
+//     getPositiveNumbersCount(): number,
+// }
+// class NumberStats implements INumberStats{
+//     private arr:number[];
+//     constructor (arr:number[]){
+//         this.arr=arr;
+//     }
+//     public getEvenNumbers(): number[] {
+//         return this.arr.filter(el=>el%2==0);
+//     }
+//     public getAverage(): number {
+//         return this.arr.reduce((el,sum)=>el+sum)/this.arr.length;
+//     }
+//     public getPositiveNumbersCount(): number {
+//         let count:number=0;
+//         for(let el of this.arr){
+//             if(el>0) count++
+//         }
+//         return count;
+//     }
+// }
+// const arr:number[]=[1,2,3,4,5,6,7,8,9,-4,-7,-9];
+// const num = new NumberStats(arr);
+// console.log(num.getEvenNumbers());
+// console.log(num.getAverage());
+// console.log(num.getPositiveNumbersCount());
+
+// 14. Создайтекласс User, содержащийследующиесвойства:
+//  • name: string
+//  • age: number
+//  • gender: 'male' | 'female'
+//  Создайте класс UserFilter, который принимает массив User[] в конструкторе и реализуетметоды:
+//  • filterByAge(min: number, max: number): User[] — возвращает пользователей с возрастом от min до
+//  max включительно
+//  • filterByGender(gender: 'male' | 'female'): User[] — возвращает пользователей с заданным полом
+
+// interface USER {
+//     name: string;
+//     age: number;
+//     gender: 'male' | 'female';
+// }
+
+// class User {
+//     name: string;
+//     age: number;
+//     gender: 'male' | 'female';
+//     users: USER[];
+
+//     constructor(users: USER[]) {
+//         this.users = users;
+//     }
+// }
+
+// class UserFilter extends User {
+//     constructor(users: USER[]) {
+//         super(users);
+//     }
+
+//     public filterByAge(min: number, max: number): USER[] {
+//         return this.users.filter(user => user.age >= min && user.age <= max);
+//     }
+
+//     public filterByGender(gender: 'male' | 'female'): USER[] {
+//         return this.users.filter(user => user.gender === gender);
+//     }
+// }
+
+// const users: USER[] = [
+//     { name: 'Alice', age: 25, gender: 'female' },
+//     { name: 'Bob', age: 30, gender: 'male' },
+//     { name: 'Charlie', age: 35, gender: 'male' },
+//     { name: 'Diana', age: 28, gender: 'female' },
+//     { name: 'Eve', age: 22, gender: 'female' }
+// ];
+
+// const userFilter = new UserFilter(users);
+// const filteredByAge = userFilter.filterByAge(25, 30);
+// console.log('Пользователи от 25 до 30 лет:', filteredByAge);
+// const filteredByGender = userFilter.filterByGender('female');
+// console.log('Пользователи женского пола:', filteredByGender);
+
+//  15. Создайтекласс TextAnalyzer, который принимаетстрокув конструкторе.
+//  Реализуйтеметоды:
+//  • getUniqueWords(): string[] — возвращает массив уникальных слов, отсортированных по алфавиту
+//  (метод sort)
+//  • getWordFrequency(): Record<string, number> — возвращает объект, в котором ключ — слово, значение —количествовхождений
+
+// class TextAnalyzer {
+//     str: string[];
+
+//     constructor(str: string[]) {
+//         this.str = str;
+//     }
+
+//     getUniqueWords(): string[] {
+//         let newStr: string[] = [];
+//         for (let el of this.str) {
+//             if (!newStr.includes(el)) {
+//                 newStr.push(el);
+//             }
+//         }
+//         return newStr.sort();
+//     }
+
+//     getWordFrequency(): Record<string, number> {
+//         let obj: Record<string, number> = {};
+//         for (let el of this.str) {
+//             if (obj[el]) {
+//                 obj[el] += 1;
+//             } else {
+//                 obj[el] = 1;
+//             }
+//         }
+//         return obj;
+//     }
+// }
+
+// const str = new TextAnalyzer(['bbbb', 'aaaa', 'cccc', 'cccc', 'aaa']);
+// console.log('Уникальные слова:', str.getUniqueWords());
+// console.log('Частота слов:', str.getWordFrequency());
+
+//  16. Создайтеинтерфейс IChecker, описывающийметоды:
+//  • hasNumbers():boolean —строкасодержитхотябыоднуцифру
+//  • hasUpperCase(): boolean —строкасодержитхотябыоднузаглавную букву
+//  • hasSymbols():boolean —строкасодержитхотябыодинспециальныйсимвол(!@#$%^&*())
+//  Создайте класс StringChecker,который реализует интерфейс и принимаетстрокув конструкторе.
+//  Каждыйметоддолжениспользоватьрегулярныевыражениядлявыполненияпроверки.
+
+// interface IChecker {
+//     hasNumbers(): boolean;
+//     hasUpperCase(): boolean;
+//     hasSymbols(): boolean;
+// }
+
+// class StringChecker implements IChecker {
+//     str: string;
+
+//     constructor(str: string) {
+//         this.str = str;
+//     }
+
+//     hasNumbers(): boolean {
+//         return /\d/.test(this.str);
+//     }
+
+//     hasUpperCase(): boolean {
+//         return /[A-Z]/.test(this.str);
+//     }
+
+//     hasSymbols(): boolean {
+//         return /[!@#$%^&*()]/.test(this.str);
+//     }
+// }
+
+// const str = new StringChecker('A1!');
+// console.log(str.hasNumbers());    
+// console.log(str.hasSymbols());   
+// console.log(str.hasUpperCase());  
